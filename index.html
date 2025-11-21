@@ -1,1067 +1,740 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Gabe's Mobile Grooming – Metro Detroit Mobile Pet Grooming</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Gabe’s Mobile Grooming offers luxury, cage-free mobile dog & cat grooming across Metro Detroit. We come to your home so your pet can be pampered right at your door.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gabe's Mobile Pet Grooming | Metro Detroit</title>
+  <meta name="description" content="Gabe's Mobile Pet Grooming offers cage-free, one-on-one mobile grooming for dogs and cats in Metro Detroit. We come right to your door!">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --pink: #ff3b8d;
-      --blue: #00a9ff;
-      --navy: #16243b;
-      --bg: #f5f7fb;
-      --card: #ffffff;
+      --blue: #2c8be8;
+      --pink: #ff4fa0;
+      --dark: #222834;
+      --light: #f4f6fb;
+      --white: #ffffff;
+      --accent: #ff9f43;
+      --radius-lg: 18px;
+      --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.15);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: #222;
+      color: var(--dark);
+      background: var(--light);
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    /* Layout helpers */
-    .container {
-      width: 100%;
+    .page {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: 18px 16px 40px;
     }
 
-    section {
-      padding: 4.5rem 0;
-    }
-
-    h1, h2, h3, h4 {
-      color: var(--navy);
-      font-weight: 700;
-    }
-
-    /* Header / nav */
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid rgba(0,0,0,0.04);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-
+    /* NAV */
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.75rem 0;
+      gap: 16px;
+      margin-bottom: 18px;
     }
 
-    .brand {
+    .nav-left {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 10px;
     }
 
-    .brand-logo {
-      width: 36px;
-      height: 36px;
+    .logo-circle {
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--pink), var(--blue));
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
+      color: var(--white);
       font-weight: 700;
-      font-size: 1.2rem;
+      font-size: 20px;
+      box-shadow: var(--shadow-soft);
     }
 
     .brand-text {
       display: flex;
       flex-direction: column;
-      line-height: 1.1;
     }
 
     .brand-text span:first-child {
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 17px;
     }
 
     .brand-text span:last-child {
-      font-size: 0.75rem;
-      opacity: 0.8;
+      font-size: 12px;
+      color: #6b7280;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 1.2rem;
-      align-items: center;
-      font-size: 0.9rem;
-    }
-
-    .nav-links a {
-      color: var(--navy);
-      font-weight: 500;
-    }
-
-    .nav-links a:hover {
-      color: var(--pink);
-    }
-
-    .nav-call {
+    .nav-phone {
       background: var(--blue);
-      color: white;
-      padding: 0.55rem 1rem;
+      color: var(--white);
+      padding: 8px 16px;
       border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      box-shadow: 0 8px 18px rgba(0, 169, 255, 0.25);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      box-shadow: var(--shadow-soft);
       white-space: nowrap;
     }
 
-    /* Hero */
+    .nav-phone small {
+      opacity: 0.8;
+      font-size: 11px;
+    }
+
+    /* HERO */
     .hero {
-      padding: 4rem 0 3.5rem;
-      background: radial-gradient(circle at top left, #ffe7f3 0, #f5fbff 35%, #f5f7fb 70%);
-    }
-
-    .hero-grid {
+      background: radial-gradient(circle at top left, #fef2ff, #e4f0ff);
+      border-radius: 26px;
+      padding: 24px 22px 24px;
       display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-      gap: 2.5rem;
-      align-items: center;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 22px;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 26px;
     }
 
-    .eyebrow {
-      font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--pink);
-      margin-bottom: 0.5rem;
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      color: #6b7280;
+      margin-bottom: 8px;
+    }
+
+    .hero-tag span {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
     }
 
     .hero h1 {
-      font-size: clamp(2.1rem, 3vw + 1.4rem, 2.9rem);
-      margin-bottom: 0.8rem;
+      font-size: clamp(26px, 4vw, 32px);
+      line-height: 1.15;
+      margin-bottom: 8px;
+      color: var(--dark);
     }
 
-    .hero-subtitle {
-      font-size: 1rem;
-      max-width: 32rem;
-      margin-bottom: 1.5rem;
+    .hero h1 span {
+      color: var(--pink);
     }
 
-    .hero-badges {
+    .hero-sub {
+      font-size: 14px;
+      color: #4b5563;
+      margin-bottom: 16px;
+    }
+
+    .hero-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 2rem;
-      font-size: 0.85rem;
+      gap: 10px;
+      margin-bottom: 16px;
     }
 
-    .chip {
-      padding: 0.35rem 0.8rem;
+    .btn-primary,
+    .btn-outline {
       border-radius: 999px;
-      background: rgba(255,255,255,0.9);
-      border: 1px solid rgba(0,0,0,0.05);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    .chip-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--pink);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      align-items: center;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.35rem;
-      border-radius: 999px;
-      padding: 0.7rem 1.4rem;
+      padding: 9px 18px;
+      font-size: 13px;
+      font-weight: 600;
       border: none;
       cursor: pointer;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-decoration: none;
-      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--pink), #ff7aa8);
-      color: white;
-      box-shadow: 0 14px 30px rgba(255, 59, 141, 0.35);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 11px 25px rgba(255, 59, 141, 0.28);
+      background: var(--accent);
+      color: var(--dark);
+      box-shadow: var(--shadow-soft);
     }
 
     .btn-outline {
-      background: transparent;
-      border: 1px solid rgba(0,0,0,0.12);
-      color: var(--navy);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: #4b5563;
     }
 
-    .btn-outline:hover {
-      background: rgba(255,255,255,0.8);
+    .hero-mini {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .hero-mini strong {
+      color: var(--dark);
+    }
+
+    .hero-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 16px 16px 14px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-card-title {
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .hero-card-sub {
+      font-size: 12px;
+      color: #6b7280;
+      margin-bottom: 10px;
+    }
+
+    .hero-photo {
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fdf2ff, #eff6ff);
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 11px;
+      color: #4b5563;
+    }
+
+    .hero-photo-dog,
+    .hero-photo-cat {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 8px 20px rgba(148, 163, 184, 0.4);
     }
 
     .hero-note {
-      font-size: 0.8rem;
-      margin-top: 0.65rem;
-      color: rgba(0,0,0,0.7);
+      font-size: 11px;
+      color: #6b7280;
+      margin-top: 8px;
     }
 
-    .hero-media {
-      background: #fff;
-      border-radius: 24px;
-      box-shadow: 0 18px 45px rgba(22, 36, 59, 0.15);
-      padding: 1.4rem;
-      position: relative;
-      overflow: hidden;
+    /* SECTIONS */
+    .section {
+      margin-bottom: 28px;
     }
 
-    .hero-media::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top right, rgba(0,169,255,0.06), transparent 55%);
-      pointer-events: none;
-    }
-
-    .hero-media-inner {
-      border-radius: 18px;
-      overflow: hidden;
-      background: linear-gradient(120deg, #fef3ff, #f0f7ff);
-      min-height: 220px;
+    .section-header {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-      text-align: center;
-      color: var(--navy);
-      font-weight: 500;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
     }
 
-    .hero-media-inner span {
-      display: block;
-      font-size: 0.95rem;
-      margin-top: 0.4rem;
-      opacity: 0.8;
+    .section-title {
+      font-size: 19px;
+      font-weight: 600;
     }
 
-    /* Shared section styles */
-    .section-heading {
-      text-align: center;
-      margin-bottom: 2.5rem;
+    .section-pill {
+      font-size: 11px;
+      background: rgba(15, 23, 42, 0.04);
+      padding: 3px 9px;
+      border-radius: 999px;
+      color: #6b7280;
     }
 
-    .section-heading h2 {
-      font-size: 1.7rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .section-heading p {
-      max-width: 32rem;
-      margin: 0.25rem auto 0;
-      font-size: 0.95rem;
-      color: rgba(0,0,0,0.8);
-    }
-
-    /* Services */
-    .cards-grid {
+    .two-col {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.6rem;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.5fr);
+      gap: 18px;
     }
 
     .card {
-      background: var(--card);
-      border-radius: 18px;
-      padding: 1.3rem 1.4rem 1.4rem;
-      box-shadow: 0 10px 24px rgba(22, 36, 59, 0.08);
-      border: 1px solid rgba(0,0,0,0.02);
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 16px 16px 14px;
+      box-shadow: var(--shadow-soft);
+      font-size: 13px;
     }
 
     .card h3 {
-      font-size: 1.05rem;
-      margin-bottom: 0.5rem;
+      font-size: 15px;
+      margin-bottom: 6px;
     }
 
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: #fff;
-      background: var(--blue);
-      margin-bottom: 0.4rem;
+    .bullet-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 6px;
     }
 
-    .card p {
-      font-size: 0.88rem;
-      color: rgba(0,0,0,0.8);
+    .bullet-list li {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 13px;
+      color: #4b5563;
     }
 
-    .card span.price {
-      display: block;
-      margin-top: 0.6rem;
-      font-weight: 600;
-      font-size: 0.93rem;
-      color: var(--navy);
-    }
-
-    .card ul {
-      margin-top: 0.6rem;
-      padding-left: 1.1rem;
-      font-size: 0.85rem;
-    }
-
-    .card ul li {
-      margin-bottom: 0.2rem;
-    }
-
-    /* How it works */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.4rem;
-    }
-
-    .step {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 1.1rem 1.2rem;
-      border: 1px solid rgba(0,0,0,0.03);
-      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.07);
-    }
-
-    .step-number {
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
-      background: rgba(0, 169, 255, 0.1);
+    .bullet-list li::before {
+      content: "•";
       color: var(--blue);
-      font-size: 0.9rem;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 0.55rem;
+      font-weight: 700;
+      margin-top: 2px;
     }
 
-    .step h3 {
-      font-size: 0.98rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .step p {
-      font-size: 0.86rem;
-      color: rgba(0,0,0,0.82);
-    }
-
-    /* Benefits */
-    .benefits-grid {
+    /* SERVICES GRID */
+    .services-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1.3rem;
-    }
-
-    .benefit {
-      background: #fff;
-      border-radius: 14px;
-      padding: 1rem 1.05rem;
-      border: 1px solid rgba(0,0,0,0.03);
-      box-shadow: 0 10px 18px rgba(15, 23, 42, 0.06);
-      font-size: 0.85rem;
-    }
-
-    .benefit h3 {
-      font-size: 0.94rem;
-      margin-bottom: 0.2rem;
-    }
-
-    /* Service area */
-    .service-area {
-      background: #ffffff;
-    }
-
-    .service-area-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .city-list {
-      columns: 2;
-      column-gap: 2rem;
-      padding-left: 1rem;
-      font-size: 0.9rem;
-      margin-top: 0.8rem;
-    }
-
-    .city-list li {
-      break-inside: avoid;
-      margin-bottom: 0.2rem;
-    }
-
-    .tagline {
-      font-size: 0.9rem;
-      color: rgba(0,0,0,0.8);
-      margin-top: 0.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
     }
 
     .service-card {
-      background: linear-gradient(135deg, var(--blue), #2f74ff);
-      color: #fff;
-      border-radius: 20px;
-      padding: 1.5rem 1.6rem;
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.35);
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 14px 14px 12px;
+      box-shadow: var(--shadow-soft);
+      font-size: 13px;
     }
 
     .service-card h3 {
-      color: #fff;
-      margin-bottom: 0.4rem;
+      font-size: 14px;
+      margin-bottom: 2px;
     }
 
-    .service-card p {
-      font-size: 0.9rem;
-      opacity: 0.96;
+    .service-price {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--blue);
+      margin-bottom: 2px;
     }
 
-    .service-card ul {
-      margin-top: 0.7rem;
-      padding-left: 1.2rem;
-      font-size: 0.86rem;
+    .service-note {
+      font-size: 11px;
+      color: #6b7280;
     }
 
-    /* FAQs */
-    .faq-grid {
+    .services-footnote {
+      font-size: 11px;
+      color: #6b7280;
+      margin-top: 8px;
+      text-align: center;
+    }
+
+    /* FAQ */
+    .faq-list {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.1rem 1.6rem;
+      gap: 8px;
     }
 
     .faq-item {
-      background: #ffffff;
+      background: var(--white);
       border-radius: 14px;
-      padding: 1rem 1.1rem;
-      border: 1px solid rgba(0,0,0,0.04);
-      font-size: 0.88rem;
-      box-shadow: 0 9px 20px rgba(15, 23, 42, 0.06);
+      padding: 10px 12px;
+      font-size: 13px;
+      box-shadow: 0 8px 18px rgba(148, 163, 184, 0.35);
     }
 
-    .faq-item h3 {
-      font-size: 0.95rem;
-      margin-bottom: 0.25rem;
-    }
-
-    /* Contact */
-    .contact {
-      background: radial-gradient(circle at top, #ffe6f4 0, #f5f7fb 45%, #edf2ff 100%);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-      gap: 2rem;
-      align-items: flex-start;
-    }
-
-    .contact-details h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .contact-details p {
-      font-size: 0.9rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .contact-details ul {
-      list-style: none;
-      margin: 0.4rem 0 0.8rem;
-      font-size: 0.9rem;
-    }
-
-    .contact-details li {
-      margin-bottom: 0.35rem;
-    }
-
-    .contact-details a {
-      color: var(--navy);
-      font-weight: 600;
-    }
-
-    .contact-box {
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 1.4rem 1.5rem;
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
-      border: 1px solid rgba(0,0,0,0.03);
-    }
-
-    .contact-box h3 {
-      font-size: 1rem;
-      margin-bottom: 0.7rem;
-    }
-
-    .contact-box label {
+    .faq-item strong {
       display: block;
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin-bottom: 0.15rem;
-      color: rgba(0,0,0,0.8);
+      margin-bottom: 2px;
     }
 
-    .contact-box input,
-    .contact-box textarea {
-      width: 100%;
-      border-radius: 10px;
-      border: 1px solid rgba(0,0,0,0.12);
-      padding: 0.55rem 0.6rem;
-      font-family: inherit;
-      font-size: 0.88rem;
-      margin-bottom: 0.7rem;
-      outline: none;
-      transition: border-color 0.14s ease, box-shadow 0.14s ease;
-      background: #fafbff;
+    /* CONTACT / FOOTER */
+    .contact-card {
+      background: linear-gradient(135deg, #1e293b, #020617);
+      color: var(--white);
+      border-radius: 20px;
+      padding: 18px 18px 16px;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 18px;
+      align-items: center;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 20px;
     }
 
-    .contact-box input:focus,
-    .contact-box textarea:focus {
-      border-color: var(--blue);
-      box-shadow: 0 0 0 2px rgba(0,169,255,0.13);
-      background: #ffffff;
+    .contact-card h2 {
+      font-size: 19px;
+      margin-bottom: 6px;
     }
 
-    .contact-box textarea {
-      min-height: 90px;
-      resize: vertical;
+    .contact-card p {
+      font-size: 13px;
+      color: #cbd5f5;
+      margin-bottom: 10px;
     }
 
-    .contact-help {
-      font-size: 0.78rem;
-      color: rgba(0,0,0,0.7);
-      margin-top: 0.25rem;
+    .contact-info {
+      display: grid;
+      gap: 4px;
+      font-size: 12px;
     }
 
-    /* Footer */
-    footer {
-      background: #0f172a;
-      color: rgba(255,255,255,0.8);
-      padding: 1.6rem 0;
-      font-size: 0.8rem;
-    }
-
-    .footer-inner {
+    .contact-info span {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 1rem;
+      gap: 6px;
       align-items: center;
     }
 
-    .footer-inner a {
-      color: rgba(255,255,255,0.88);
+    .contact-pill {
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      padding: 10px 12px;
+      font-size: 12px;
+      display: grid;
+      gap: 3px;
     }
 
-    .footer-inner span.highlight {
-      color: #fff;
-      font-weight: 600;
+    .contact-pill strong {
+      font-size: 13px;
     }
 
-    /* Responsive tweaks */
-    @media (max-width: 900px) {
-      .hero-grid,
-      .contact-grid,
-      .service-area-grid {
-        grid-template-columns: minmax(0, 1fr);
+    footer {
+      font-size: 11px;
+      color: #6b7280;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    footer a {
+      color: var(--blue);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
       }
+
+      .nav-phone {
+        align-self: stretch;
+        justify-content: center;
+      }
+
       .hero {
-        padding-top: 3rem;
+        grid-template-columns: minmax(0, 1fr);
+        padding: 18px 16px;
       }
-      .hero-media {
+
+      .hero-card {
         order: -1;
       }
-    }
 
-    @media (max-width: 800px) {
-      .cards-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .steps,
-      .benefits-grid,
-      .faq-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav-links {
-        display: none;
-      }
-      section {
-        padding: 3.2rem 0;
-      }
-      .cards-grid,
-      .steps,
-      .benefits-grid,
-      .faq-grid {
+      .two-col {
         grid-template-columns: minmax(0, 1fr);
       }
-      .city-list {
-        columns: 1;
-      }
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .hero-actions .btn,
-      .nav-call {
-        width: 100%;
-        justify-content: center;
+
+      .contact-card {
+        grid-template-columns: minmax(0, 1fr);
       }
     }
   </style>
 </head>
 <body>
-
-<header>
-  <div class="container nav">
-    <div class="brand">
-      <div class="brand-logo">G</div>
-      <div class="brand-text">
-        <span>Gabe's Mobile Grooming</span>
-        <span>Metro Detroit • Dogs & Cats</span>
-      </div>
-    </div>
-    <nav class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#how-it-works">How It Works</a>
-      <a href="#area">Service Area</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-      <a class="nav-call" href="tel:+17346959481">Call (734) 695-9481</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">Mobile Pet Grooming in Metro Detroit</div>
-        <h1>Luxury, Cage-Free Grooming Right at Your Door.</h1>
-        <p class="hero-subtitle">
-          Gabe’s Mobile Grooming brings a full grooming salon to your driveway—so your dog or cat can be pampered in a calm, one-on-one environment.
-        </p>
-        <div class="hero-badges">
-          <div class="chip">
-            <span class="chip-dot"></span> Cage-free, one-on-one care
-          </div>
-          <div class="chip">
-            <span class="chip-dot"></span> Dogs & cats welcome
-          </div>
-          <div class="chip">
-            <span class="chip-dot"></span> Serving Westland & Metro Detroit
-          </div>
+  <div class="page">
+    <!-- NAV -->
+    <header class="nav">
+      <div class="nav-left">
+        <div class="logo-circle">G</div>
+        <div class="brand-text">
+          <span>Gabe's Mobile Pet Grooming</span>
+          <span>Luxury mobile grooming for dogs & cats</span>
         </div>
-        <div class="hero-actions">
-          <a href="tel:+17346959481" class="btn btn-primary">
-            Call or Text (734) 695-9481
-          </a>
-          <a href="#contact" class="btn btn-outline">
-            Request an Appointment
-          </a>
+      </div>
+      <a class="nav-phone" href="tel:+17346959481">
+        <div>
+          <div>Call or Text: (734) 695-9481</div>
+          <small>Serving Westland & Metro Detroit</small>
+        </div>
+      </a>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="hero-tag">
+          <span></span> Cage-free • One-on-one • We come to you
+        </div>
+        <h1>Metro Detroit’s <span>Favorite Mobile Pet Groomer</span></h1>
+        <p class="hero-sub">
+          Professional, cage-free grooming for dogs and cats—done start to finish right outside your home.
+          No stressful car rides or noisy salons.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="tel:+17346959481" class="btn-primary">📞 Call (734) 695-9481</a>
+          <a href="sms:+17346959481" class="btn-outline">📩 Text to Request an Appointment</a>
+        </div>
+
+        <div class="hero-mini">
+          <span><strong>Cage-Free:</strong> pets are groomed one at a time, start to finish.</span>
+          <span><strong>Convenient:</strong> we come to you in our fully equipped grooming van.</span>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div>
+          <div class="hero-card-title">Full-Service Mobile Grooming</div>
+          <div class="hero-card-sub">Perfect for small breeds, doodles, big dogs & even cats.</div>
+        </div>
+        <div class="hero-photo">
+          <div class="hero-photo-dog">🐶</div>
+          <div class="hero-photo-cat">🐱</div>
+          <div>
+            Dogs & cats of all sizes welcome.<br />
+            Ask about keeping your pet on a 4-week schedule.
+          </div>
         </div>
         <p class="hero-note">
-          Most clients stay on a 4–6 week schedule to keep coats healthy and tangle-free.
+          Text <strong>(734) 695-9481</strong> with your pet’s breed, weight, and city for a quick quote.
         </p>
+      </aside>
+    </section>
+
+    <!-- ABOUT / HOW IT WORKS -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">How Gabe’s Mobile Grooming Works</h2>
+        <span class="section-pill">Stress-free grooming at your door</span>
       </div>
 
-      <div class="hero-media">
-        <div class="hero-media-inner">
-          <div>
-            <h3>Grooming Day, Made Easy</h3>
-            <span>No driving. No waiting rooms. Just a clean, happy pet coming right back to your front door.</span>
+      <div class="two-col">
+        <div class="card">
+          <h3>We Come to You</h3>
+          <p>
+            On the day of your appointment, we park right in front of your home. Our grooming van is fully
+            equipped with professional tools, warm water, and climate control—your pet enjoys a private,
+            one-on-one spa experience.
+          </p>
+          <ul class="bullet-list">
+            <li>No driving across town or waiting in a lobby.</li>
+            <li>Your pet never leaves your property except to step into our van.</li>
+            <li>Perfect for anxious, senior, or multi-dog households.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Cage-Free, Start-to-Finish Grooming</h3>
+          <p>
+            Each pet is groomed individually from start to finish with gentle handling and patience. We
+            focus on making grooming a calm, positive experience.
+          </p>
+          <ul class="bullet-list">
+            <li>No cages or crowded kennels.</li>
+            <li>Most full grooms average 60–90 minutes, depending on size and coat.</li>
+            <li>We recommend a 4-week schedule to keep coats healthy and tangle-free.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES & PRICING -->
+    <section class="section" id="services">
+      <div class="section-header">
+        <h2 class="section-title">Services & Starting Prices</h2>
+        <span class="section-pill">Final quote depends on size, coat & temperament</span>
+      </div>
+
+      <p style="font-size:13px; color:#4b5563; margin-bottom:10px;">
+        Mobile pricing reflects our one-on-one service, travel, and the convenience of coming directly to
+        your driveway. Text your pet’s information for a custom quote.
+      </p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Small Dogs (0–25 lbs)</h3>
+          <div class="service-price">Full groom starting at $115</div>
+          <div class="service-note">Bath-only packages start at $95.</div>
+        </div>
+
+        <div class="service-card">
+          <h3>Medium Dogs (26–50 lbs)</h3>
+          <div class="service-price">Full groom starting at $130</div>
+          <div class="service-note">Bath-only packages start at $110.</div>
+        </div>
+
+        <div class="service-card">
+          <h3>Large Dogs (51–80 lbs)</h3>
+          <div class="service-price">Full groom starting at $150</div>
+          <div class="service-note">Bath-only packages start at $120.</div>
+        </div>
+
+        <div class="service-card">
+          <h3>XL Dogs (81–110 lbs)</h3>
+          <div class="service-price">Full groom starting at $170</div>
+          <div class="service-note">Bath-only packages start at $140.</div>
+        </div>
+
+        <div class="service-card">
+          <h3>Giant Dogs (110+ lbs)</h3>
+          <div class="service-price">Full groom starting at $190</div>
+          <div class="service-note">Bath-only packages start at $160.</div>
+        </div>
+
+        <div class="service-card">
+          <h3>Cats</h3>
+          <div class="service-price">Full groom starting at $160</div>
+          <div class="service-note">Bath-only packages start at $130.</div>
+        </div>
+      </div>
+
+      <p class="services-footnote">
+        All rates are estimates and may change based on breed, coat condition (matting), temperament, and
+        any extra services requested.
+      </p>
+    </section>
+
+    <!-- WHAT'S INCLUDED -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">What’s Included in a Full Groom</h2>
+        <span class="section-pill">Everything your pet needs to look & feel great</span>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <h3>Full Groom Service</h3>
+          <ul class="bullet-list">
+            <li>On-site grooming assessment & coat consultation</li>
+            <li>Warm bath with premium shampoo & conditioner</li>
+            <li>Blow-dry and thorough brush-out</li>
+            <li>Full body haircut or tidy-up (if requested)</li>
+            <li>Nail trimming & filing</li>
+            <li>Paw pad & sanitary trim (when appropriate)</li>
+            <li>Ear cleaning and plucking if needed</li>
+            <li>Finishing spray & photo-ready fluff</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Add-On Services</h3>
+          <ul class="bullet-list">
+            <li>Mat removal — starting at $10</li>
+            <li>Deshedding treatment — starting at $15</li>
+            <li>Teeth & fresh breath treatment — $10</li>
+            <li>Flea & tick bath — price varies by size</li>
+          </ul>
+          <p style="font-size:12px; color:#6b7280; margin-top:6px;">
+            Add-ons can be requested when you book or discussed at your appointment once we see your pet’s
+            coat in person.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICE AREAS -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Service Areas</h2>
+        <span class="section-pill">Westland & Metro Detroit</span>
+      </div>
+
+      <div class="card" style="font-size:13px;">
+        Our mobile grooming van currently serves pets in:
+        <br /><br />
+        <strong>
+          Westland, Livonia, Canton, Garden City, Dearborn, Dearborn Heights, Redford, Inkster, Taylor,
+          and surrounding Metro Detroit areas.
+        </strong>
+        <br /><br />
+        Not sure if you’re in range? Text your address to <strong>(734) 695-9481</strong> and we’ll let you
+        know if we can get to you.
+      </div>
+    </section>
+
+    <!-- FAQ / REVIEWS STYLE BLOCK -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Common Questions</h2>
+        <span class="section-pill">New to mobile grooming? Start here.</span>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <strong>How often should my pet be groomed?</strong>
+          Most dogs and cats do best on a 4–8 week schedule, depending on their coat. Doodles and long-haired
+          breeds typically need grooming every 4 weeks to prevent matting.
+        </div>
+
+        <div class="faq-item">
+          <strong>Do you use cages?</strong>
+          No. All grooming is one-on-one inside the mobile salon. Your pet goes straight from your home into
+          the van and back again—no cages or crowded kennels.
+        </div>
+
+        <div class="faq-item">
+          <strong>How do I get a quote?</strong>
+          Text <strong>(734) 695-9481</strong> with your pet’s name, breed, approximate weight, coat length,
+          and your city. We’ll respond with a starting estimate and available dates.
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / BOOKING -->
+    <section class="section">
+      <div class="contact-card">
+        <div>
+          <h2>Ready to Book Your Pet’s Spa Day?</h2>
+          <p>
+            Text or call today to reserve your spot on our route. We fill up quickly—especially for evenings
+            and weekends—so staying on a recurring schedule is the best way to guarantee your time.
+          </p>
+          <div class="contact-info">
+            <span>📞 <strong>Phone / Text:</strong> (734) 695-9481</span>
+            <span>📧 <strong>Email:</strong> gabesmobilegrooming@gmail.com</span>
+            <span>📍 <strong>Based in:</strong> Westland, serving Metro Detroit</span>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="container">
-      <div class="section-heading">
-        <h2>Services & Starting Prices</h2>
-        <p>
-          Final pricing depends on coat condition, size, and temperament. We’ll confirm your exact price after meeting your pet.
-        </p>
-      </div>
-
-      <div class="cards-grid">
-        <article class="card">
-          <span class="pill">Full Groom</span>
-          <h3>Small Dogs (0–25 lbs)</h3>
-          <p>Perfect for little pups who need a full spa day from nose to tail.</p>
-          <span class="price">Starting at $115 <br><small>Bath only starts at $95</small></span>
-          <ul>
-            <li>Warm bath & blow-dry</li>
-            <li>Full haircut or tidy trim</li>
-            <li>Nail trim & ear cleaning</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <span class="pill">Full Groom</span>
-          <h3>Medium Dogs (26–50 lbs)</h3>
-          <p>Ideal for doodles, spaniels, and mid-sized best friends.</p>
-          <span class="price">Starting at $130 <br><small>Bath only starts at $110</small></span>
-          <ul>
-            <li>Full body haircut or deshed</li>
-            <li>Paw pad & sanitary trim</li>
-            <li>Nails, ears, & brush-out</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <span class="pill">Full Groom</span>
-          <h3>Large Dogs (51–80 lbs)</h3>
-          <p>For bigger pups that need extra time, care, and brushing.</p>
-          <span class="price">Starting at $150 <br><small>Bath only starts at $120</small></span>
-          <ul>
-            <li>Warm bath & blow-dry</li>
-            <li>Haircut or deshedding treatment</li>
-            <li>Nails, ears, & finishing spray</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <span class="pill">Full Groom</span>
-          <h3>Extra Large (81–110 lbs)</h3>
-          <p>For gentle giants who still deserve a relaxing spa day.</p>
-          <span class="price">Starting at $170 <br><small>Bath only starts at $140</small></span>
-          <ul>
-            <li>Full coat care tailored to breed</li>
-            <li>Complete brush-out</li>
-            <li>Nail trim & ear cleaning</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <span class="pill">Full Groom</span>
-          <h3>Giant Dogs (110+ lbs)</h3>
-          <p>Special handling and pacing for extra-large, extra-sweet companions.</p>
-          <span class="price">Starting at $190 <br><small>Bath only starts at $160</small></span>
-          <ul>
-            <li>Extended time & handling</li>
-            <li>Thorough brush-out</li>
-            <li>Customized grooming plan</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <span class="pill">Full Groom</span>
-          <h3>Cats</h3>
-          <p>Quiet, low-stress grooming tailored to your cat’s comfort level.</p>
-          <span class="price">Starting at $160 <br><small>Bath only starts at $130</small></span>
-          <ul>
-            <li>Bath (if tolerated) & brush-out</li>
-            <li>Nail trim & sanitary tidy</li>
-            <li>De-shedding options available</li>
-          </ul>
-        </article>
-      </div>
-
-      <p style="font-size:0.8rem; margin-top:1.2rem; text-align:center; color:rgba(0,0,0,0.75);">
-        All rates are estimates and may vary based on breed, size, coat condition, temperament, and any additional services requested.
-      </p>
-    </div>
-  </section>
-
-  <!-- WHAT'S INCLUDED -->
-  <section id="whats-included" style="background:#ffffff;">
-    <div class="container">
-      <div class="section-heading">
-        <h2>What’s Included in a Full Groom</h2>
-        <p>
-          Inside the fully equipped mobile grooming van we have everything needed to safely pamper your pet.
-        </p>
-      </div>
-
-      <div class="cards-grid">
-        <article class="card">
-          <h3>On-Site Assessment</h3>
-          <p>We start with a quick chat and visual exam so we can tailor the groom to your pet’s needs and comfort level.</p>
-        </article>
-        <article class="card">
-          <h3>Warm Bath & Premium Products</h3>
-          <p>High-quality shampoos and conditioners chosen for your pet’s skin & coat, followed by a gentle towel & blow-dry.</p>
-        </article>
-        <article class="card">
-          <h3>Haircut & Styling</h3>
-          <p>From breed-standard clips to cute, easy-to-maintain pet trims—tell us how you like your pet to look.</p>
-        </article>
-        <article class="card">
-          <h3>Nail Trimming & Filing</h3>
-          <p>Short, smooth nails for comfortable paws and less scratching on floors and furniture.</p>
-        </article>
-        <article class="card">
-          <h3>Paw Pad & Sanitary Trim</h3>
-          <p>Neatened paws and sanitary areas help keep your pet clean and comfortable between appointments.</p>
-        </article>
-        <article class="card">
-          <h3>Ear Cleaning</h3>
-          <p>Gentle ear cleaning, and plucking when appropriate, to help reduce buildup and irritation.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- BENEFITS -->
-  <section id="benefits">
-    <div class="container">
-      <div class="section-heading">
-        <h2>Why Pet Parents Love Mobile Grooming</h2>
-      </div>
-
-      <div class="benefits-grid">
-        <div class="benefit">
-          <h3>Quick Service</h3>
-          <p>Most pets are finished in about 60–90 minutes with no all-day wait at a salon.</p>
-        </div>
-        <div class="benefit">
-          <h3>We Come to You</h3>
-          <p>Skip the drive—our fully equipped grooming van parks right at your home.</p>
-        </div>
-        <div class="benefit">
-          <h3>Cage-Free Grooming</h3>
-          <p>Your pet is never crated with strangers. It’s calm, quiet, and one-on-one from start to finish.</p>
-        </div>
-        <div class="benefit">
-          <h3>Text & Email Updates</h3>
-          <p>We keep communication easy for scheduling, confirmations, and reminders.</p>
+        <div class="contact-pill">
+          <strong>Quick Booking Tip</strong>
+          <span>Include this when you text:</span>
+          <span>• Your name & city</span>
+          <span>• Pet’s name, breed & weight</span>
+          <span>• Full groom or bath-only</span>
+          <span>• Any special needs (senior, anxious, etc.)</span>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- HOW IT WORKS -->
-  <section id="how-it-works" style="background:#ffffff;">
-    <div class="container">
-      <div class="section-heading">
-        <h2>How It Works</h2>
-      </div>
-
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">1</div>
-          <h3>Request an Appointment</h3>
-          <p>Call or text <a href="tel:+17346959481">(734) 695-9481</a>, or send a message using the form below with your pet’s info.</p>
-        </div>
-        <div class="step">
-          <div class="step-number">2</div>
-          <h3>We Arrive at Your Home</h3>
-          <p>On grooming day, our mobile salon parks outside your home. We greet your pet and go over any special requests.</p>
-        </div>
-        <div class="step">
-          <div class="step-number">3</div>
-          <h3>Relax While We Groom</h3>
-          <p>Your pet enjoys a calm, cage-free spa experience—and comes back to your door clean, styled, and smelling fresh.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICE AREA -->
-  <section id="area" class="service-area">
-    <div class="container service-area-grid">
-      <div>
-        <div class="section-heading" style="text-align:left; margin-bottom:1.4rem;">
-          <h2>Service Areas</h2>
-          <p>Gabe’s Mobile Grooming currently serves pets in the following Metro Detroit communities:</p>
-        </div>
-        <ul class="city-list">
-          <li>Westland, MI</li>
-          <li>Livonia, MI</li>
-          <li>Canton, MI</li>
-          <li>Garden City, MI</li>
-          <li>Dearborn, MI</li>
-          <li>Dearborn Heights, MI</li>
-          <li>Redford, MI</li>
-          <li>Inkster, MI</li>
-          <li>Taylor, MI</li>
-          <li>Detroit, MI (select areas)</li>
-        </ul>
-        <p class="tagline">
-          Not sure if you’re in the coverage area? Reach out with your address and we’ll let you know what’s possible.
-        </p>
-      </div>
-
-      <aside class="service-card">
-        <h3>Keeping Pets on a Healthy Schedule</h3>
-        <p>
-          Most clients stay on a 4-week or 6-week rotation to prevent matting and keep skin & coats in great shape.
-        </p>
-        <ul>
-          <li>Priority booking for regular schedule clients</li>
-          <li>Ideal for doodles, double coats, and high-maintenance breeds</li>
-          <li>Ask about setting up a recurring route for your pet</li>
-        </ul>
-      </aside>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="container">
-      <div class="section-heading">
-        <h2>Frequently Asked Questions</h2>
-      </div>
-
-      <div class="faq-grid">
-        <article class="faq-item">
-          <h3>How often should my pet be groomed?</h3>
-          <p>
-            Most dogs and cats do best on a 4–6 week schedule. Doodles, long-coated breeds, and heavy shedders often need more frequent grooming to prevent matting and buildup.
-          </p>
-        </article>
-
-        <article class="faq-item">
-          <h3>Do you groom both dogs and cats?</h3>
-          <p>
-            Yes. We provide mobile grooming for both dogs and cats, from small breeds to giant breeds and many feline personalities.
-          </p>
-        </article>
-
-        <article class="faq-item">
-          <h3>What vaccinations are required?</h3>
-          <p>
-            For everyone’s safety, pets should be current on rabies and core vaccines according to your veterinarian’s recommendations.
-          </p>
-        </article>
-
-        <article class="faq-item">
-          <h3>Where do you park the grooming van?</h3>
-          <p>
-            We typically park in your driveway or directly in front of your home, where we can connect safely and keep your pet close.
-          </p>
-        </article>
-
-        <article class="faq-item">
-          <h3>How do I pay?</h3>
-          <p>
-            Payment is due at the end of the appointment. We’ll go over accepted payment methods when you book.
-          </p>
-        </article>
-
-        <article class="faq-item">
-          <h3>Do you offer de-shedding or extra services?</h3>
-          <p>
-            Yes! We offer add-ons such as de-shedding treatment, teeth & fresh breath care, and flea & tick baths (price varies by size).
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <div class="container contact-grid">
-      <div class="contact-details">
-        <div class="section-heading" style="text-align:left; margin-bottom:1.4rem;">
-          <h2>Request Your First Appointment</h2>
-          <p>Tell us a little about your pet and we’ll reach out to confirm details and scheduling.</p>
-        </div>
-
-        <h3>Contact Info</h3>
-        <ul>
-          <li><strong>Phone / Text:</strong> <a href="tel:+17346959481">(734) 695-9481</a></li>
-          <li><strong>Email:</strong> <a href="mailto:gabesmobilegrooming@gmail.com">gabesmobilegrooming@gmail.com</a></li>
-          <li><strong>Service Area:</strong> Westland & Metro Detroit, MI</li>
-        </ul>
-
-        <p style="font-size:0.9rem; margin-top:0.6rem;">
-          Please note: exact pricing is based on breed, size, coat condition, and temperament. Photos of your pet can help us give a more accurate quote.
-        </p>
-      </div>
-
-      <div class="contact-box">
-        <h3>Quick Appointment Request</h3>
-        <form action="mailto:gabesmobilegrooming@gmail.com" method="post" enctype="text/plain">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="Name" placeholder="Your name" required>
-
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="Phone" placeholder="Best number to call or text" required>
-
-          <label for="pet">Pet’s Name, Breed & Approx. Weight</label>
-          <textarea id="pet" name="Pet details" placeholder="Example: Bella, Goldendoodle, ~45 lbs" required></textarea>
-
-          <label for="notes">Grooming Needs / Notes</label>
-          <textarea id="notes" name="Notes" placeholder="Describe what kind of groom you’d like or any special concerns."></textarea>
-
-          <button type="submit" class="btn btn-primary" style="margin-top:0.3rem; width:100%;">
-            Send Request
-          </button>
-
-          <p class="contact-help">
-            Submitting this form opens your email app with the details filled in. You can also text or email directly with photos of your pet.
-          </p>
-        </form>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="container footer-inner">
-    <div>
-      © 2025 <span class="highlight">Gabe’s Mobile Grooming</span>. All rights reserved.
-    </div>
-    <div>
-      Serving Westland & the Metro Detroit area • Website: 
-      <a href="https://gabesmobilegrooming.site" target="_blank" rel="noopener">gabesmobilegrooming.site</a>
-    </div>
+    <!-- FOOTER -->
+    <footer>
+      © 2025 Gabe’s Mobile Pet Grooming. All rights reserved. &nbsp;|&nbsp;
+      <a href="https://gabesmobilegrooming.site">gabesmobilegrooming.site</a>
+    </footer>
   </div>
-</footer>
-
 </body>
 </html>
